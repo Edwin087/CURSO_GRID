@@ -1,0 +1,57 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #72115f;
+  padding: 50px;
+  margin: 0;
+  color: white;
+}
+.container {
+  border: solid 1px rgb(53, 87, 129);
+  padding: 5px;
+  background-color: rgb(225, 126, 188);
+  border-radius: 5px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  width: 600px;
+  height: 500px;
+  grid-template-areas:
+  /* ....para nombrar las areas con grid-area */
+    "header header header"
+    "main . sidebar"
+    "footer footer footer";
+
+  /* grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;....esta es la forma normal*/
+  /* grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1f);...se puede simplicar el codigo de esta manera */
+
+  /*grid-template-columns: [linea-1] 1fr[linea-2] 1fr[liena-3] 1fr [linea-4];
+ .....acignación de nombres a las lineas 
+  grid-template-rows: 1fr 1fr;*/
+
+  /* forma de abreviar el codigo  la primera para fila-rows y la segunda-colums 
+  .container{
+    display: grid;
+    grid-template: repeat(2, 1fr) / repeat(3,1fr);
+}*/
+}
+.item {
+  box-sizing: border-box;
+  border: solid 3px rgb(117, 19, 255);
+  background-color: aqua;
+  color: black;
+  border-radius: 3px;
+}
+/* .item1 {
+  grid-column-start: linea-1; ...desde donde inicia el elemento de la linea
+  grid-column-end: 3; .....hasta donde llega el elemto de la linea
+} */
+
+.item1 {
+  grid-area: footer;
+  /* para moverme a la pocición o areá del grid-template-areas con los nombres que le asigne  */
+}
+.item2 {
+  grid-area: sidebar;
+}
