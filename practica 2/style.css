@@ -13,12 +13,19 @@ body {
   width: 600px;
   height: 300px;
   display: grid;
-  grid-template-columns: repeat(3, 150px);
-  grid-template-rows: repeat(2, 100px);
-  justify-items: stretch;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  /* grid-template-areas:
+    "header header sidebar "
+    "main . sidebar"
+    "footer footer footer"; */
+
+  /*............. alineacion de los items y del contenedor
+   justify-items: stretch;
   align-items: stretch;
   justify-content: space-evenly;
   align-content: space-evenly;
+  ............................. */
 }
 .item {
   box-sizing: border-box;
@@ -26,6 +33,49 @@ body {
   background-color: aqua;
   color: black;
   border-radius: 3px;
-  /* width: 80px;
-  height: 60px;*/
+  min-width: 80px;
+}
+.item1 {
+  /* grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 4;
+  forma normal */
+
+  /* grid-column-start: 1;
+  grid-column-end: span 3;
+  grid-row-start: 2;
+  grid-row-end: span 1;
+ ....... forma span */
+
+  /*grid-column: 1 / span 3;
+  grid-row: 2 / span 1;
+ ...forma de simplificar */
+
+  /* grid-area: header; por areas segun el nombre que le demos en el  grid-template-areas*/
+
+  justify-self: center;
+  align-self: center;
+  /* alineación de un solo elemento con justify- self y align-self */
+
+  /* forma simplificaca place-self :center center; ...primerode  forma vertical y leugo horizontal */
+}
+
+.item2 {
+  /* grid-column: 2 /4;
+  grid-row: 3/4; */
+
+  /*  grid-area: footer;
+  grid-area: footer  por areas segun el nombre que le demos en el  grid-template-areas*/
+
+  justify-self: end;
+  align-self: flex-end;
+  /* alineación de un solo elemento con justify- self y align-self */
+
+  /* forma simplificaca place-self :center center; ...
+  primerode  forma vertical y leugo horizontal */
+}
+.item3 {
+  justify-self: stretch;
+  align-self: stretch;
 }
